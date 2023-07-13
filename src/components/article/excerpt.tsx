@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 import { FiEdit } from 'react-icons/fi'
+import Image from 'next/image'
 
 interface IProp {
     post: IPost
@@ -30,7 +31,7 @@ const ArticleExcerpt = ({ post }: IProp) => {
     return (
         <div className="p-4 md:w-1/3">
             <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={post?.thumbnail?.url} alt={post.slug} />
+                <Image className="lg:h-48 md:h-36 w-full object-cover object-center" src={post?.thumbnail?.url} alt={post.slug} />
                 <div className="p-6">
                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
                     <Link href={`/${post.slug}`} className="title-font text-xl font-semibold text-dark mb-3 block">{post.title}</Link>

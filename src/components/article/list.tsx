@@ -18,7 +18,7 @@ const ArticleList = () => {
     return (
         <div className="flex flex-wrap m-4">
             {posts.posts ? (
-                posts.posts.map(post => <ArticleExcerpt post={post} />)
+                posts.posts.map(post => <ArticleExcerpt key={post.id} post={post} />)
             ) : (
                 <div className="relative h-96 w-full">
                     <Loading />

@@ -18,6 +18,7 @@ import { thumbnailSelector } from '@blog/domain/slice/thumbnail'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import { postsSelector } from '@blog/domain/slice/posts'
 import { LOADINGACTIONS, LOADINGSTATE } from '@blog/interfaces/loading'
+import Image from 'next/image'
 
 interface IProp {
     post: IPost | undefined
@@ -81,7 +82,7 @@ const PostSide = ({ post, onChange, onCreatePost, onEditPost }: IProp) => {
                 <ImageUploading value={[]} onChange={(value, index) => onChangeThumbnail(value, index)} maxNumber={1} dataURLKey="data_url">
                     {({ onImageUpload, dragProps }) => (
                         <div className="upload__image-wrapper bg-gray-light h-full rounded-sm" onClick={onImageUpload} {...dragProps}>
-                            <div className="h-full">{post?.thumbnail ? <img src={post.thumbnail.url} alt="" className="h-full w-full rounded" /> : <div className=""></div>}</div>
+                            <div className="h-full">{post?.thumbnail ? <Image src={post.thumbnail.url} alt="" className="h-full w-full rounded" /> : <div className=""></div>}</div>
                         </div>
                     )}
                 </ImageUploading>

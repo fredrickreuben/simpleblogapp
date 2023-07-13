@@ -49,7 +49,7 @@ const CreatePost = ({ id }: IProp) => {
         if (posts?.post?.id && !id) {
             redirect(`create/${posts.post?.id}`)
         }
-    }, [posts.post?.id])
+    }, [posts.post?.id, id])
 
     useEffect(() => {
         if (posts.post && posts.post.id) {

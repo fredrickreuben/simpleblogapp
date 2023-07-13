@@ -25,7 +25,7 @@ const ArticleContent = ({ slug }: IProp) => {
 
     useEffect(() => {
         store.dispatch(viewPost(slug))
-    }, [])
+    }, [slug])
 
     useEffect(() => {
         if (posts.post) {
