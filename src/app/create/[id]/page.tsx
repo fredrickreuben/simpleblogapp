@@ -1,23 +1,22 @@
-'use client'
-
 import React from 'react'
-import { Metadata } from 'next'
-import { useParams } from 'next/navigation'
+import { Metadata, ResolvingMetadata } from 'next'
 import CreatePost from '@blog/components/post/create'
+
+interface IProps {
+    params: { id: number }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
 
 export const metadata: Metadata = {
     title: 'Create Post',
     description: 'Use this page to create a blog article.',
 }
 
-const RegisterPage = () => {
-    const { id } = useParams()
+const RegisterPage = ({ params, searchParams }: IProps, parent: ResolvingMetadata) => {
+    
+    const id = params.id
 
-    return (
-        <>
-            <CreatePost id={id ? Number(id) : null} />
-        </>
-    )
+    return <CreatePost id={id ? Number(id) : null} />
 }
 
 export default RegisterPage
