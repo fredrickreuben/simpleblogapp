@@ -5,7 +5,6 @@ import React from 'react'
 import parser from 'html-react-parser'
 import { FaUserCircle } from 'react-icons/fa'
 import IUser from '@blog/domain/models/user'
-import Image from 'next/image'
 
 const ArticleView = ({ title, description, content, thumbnail, tags, firstName, lastName }: IPost & IUser) => {
     return (
@@ -13,7 +12,7 @@ const ArticleView = ({ title, description, content, thumbnail, tags, firstName, 
             <div className="shadow-md rounded p-4">
                 <h1 className="text-4xl font-medium text-dark mb-4">{title}</h1>
                 <div className="">
-                    <Image className="w-full h-full rounded" src={thumbnail?.url} alt={title} />
+                    <img className="w-full h-full rounded" src={thumbnail?.url} alt={title} />
                 </div>
                 <div className="pt-5 flex gap-2 items-center">
                     <FaUserCircle className='text-5xl' />
