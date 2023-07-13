@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    p {
+        @apply p-2 leading-7;
+    }
+    .container {
+        @apply xl:!px-36 lg:!px-20;
+    }
+    .btn {
+        @apply inline-flex items-center border-0 py-2 px-5 focus:outline-none hover:opacity-80 rounded-md text-white text-base mt-4 md:mt-0 transition-all;
+    }
+    .form-control {
+        @apply block min-h-[auto] w-full rounded-none border-0 border-b-2 bg-transparent border-b-dark focus:border-b-primary px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-gray-dark [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0;
+    }
+    .form-label {
+        @apply pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-dark transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-gray-dark dark:peer-focus:text-primary peer-[:not(:placeholder-shown)]:-translate-y-[0.9rem] peer-[:not(:placeholder-shown)]:scale-[0.8];
+    }
+}

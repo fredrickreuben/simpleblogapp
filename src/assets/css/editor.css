@@ -1,0 +1,7 @@
+.ck.ck-editor__editable_inline {
+    min-height: 600px !important;
+    max-height: 800px !important;
+}
+.ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable){
+    border: 1px solid #E91E63 !important;
+}
